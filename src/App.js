@@ -4,16 +4,25 @@ import Blocks from "./components/Blocks";
 import Button from "./components/Button";
 import Confetti from 'react-confetti'
 
-import dataJS from "./data"
-
-let datatemp = structuredClone(dataJS);
-
 function App() {
 
-  console.log(`App rendered`)
+  let createRandomDice = () => {
+    let data = []
+    for (let i = 0; i < 10; i++) {
+      let number = Math.floor(Math.random() * 6) + 1
+      data.push({ id: i + 1, number: number, on: false })
+    }
+    return data
+  }
 
-  const [data, setData] = useState(datatemp)
+  const [data, setData] = useState([...createRandomDice()])
   const [over, setOver] = useState(false)
+
+  useEffect(() => {
+    if (!over) {
+      setData([...createRandomDice()])
+    }
+  }, [over])
 
   useEffect(() => {
     let count = 0, last = 0
@@ -54,7 +63,7 @@ function App() {
       })
     }
     else {
-      setData(dataJS)
+      setData(data)
       setOver(false)
     }
   }

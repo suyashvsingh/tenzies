@@ -12,16 +12,31 @@ body {
 .App {
     background-color: #F5F5F5;
     justify-content: center;
-    padding: 1em;
-    margin: 1em;
+    padding: 3em;
+    margin: 3em;
     border-radius: 10px;
 }
 
+@media only screen and (max-width: 864px) {
+    .App {
+        margin: 0.5em;
+    }
+}
+
 .blocks {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(5em, 1fr));
+    display: flex;
     align-items: center;
-    justify-items: center;
+    justify-content: center;
+}
+
+
+@media only screen and (max-width: 864px) {
+    .blocks {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(5em, 1fr));
+        align-items: center;
+        justify-items: center;
+    }
 }
 
 .block {
@@ -37,7 +52,6 @@ body {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     border-radius: 0.3em;
     cursor: pointer;
-
 }
 
 .block--green {
