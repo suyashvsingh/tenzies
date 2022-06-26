@@ -6,22 +6,11 @@ import Confetti from "react-confetti";
 
 function App() {
   let createRandomDice = () => {
-    let data = [
-      { id: 1, number: 1, on: false },
-      { id: 1, number: 1, on: false },
-      { id: 1, number: 1, on: false },
-      { id: 1, number: 1, on: false },
-      { id: 1, number: 1, on: false },
-      { id: 1, number: 1, on: false },
-      { id: 1, number: 1, on: false },
-      { id: 1, number: 1, on: false },
-      { id: 1, number: 1, on: false },
-      { id: 1, number: 1, on: false },
-    ];
-    // for (let i = 0; i < 10; i++) {
-    //   let number = Math.floor(Math.random() * 6) + 1;
-    //   data.push({ id: i + 1, number: number, on: false });
-    // }
+    let data = [];
+    for (let i = 0; i < 10; i++) {
+      let number = Math.floor(Math.random() * 6) + 1;
+      data.push({ id: i + 1, number: number, on: false });
+    }
     return data;
   };
 
