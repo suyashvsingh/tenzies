@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Blocks from "./components/Blocks";
 import Button from "./components/Button";
 import Confetti from "react-confetti";
+import AppContext from "./components/context";
 
 function App() {
   let createRandomDice = () => {
@@ -67,12 +68,14 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <Header />
-      <Blocks data={data} toggle={toggle} />
-      <Button onClick={onClick} over={over} />
-      {over && <Confetti />}
-    </div>
+    <AppContext.Provider value={{ data, toggle, onClick, over }}>
+      <div className="App">
+        <Header />
+        <Blocks />
+        <Button />
+        {over && <Confetti />}
+      </div>
+    </AppContext.Provider>
   );
 }
 

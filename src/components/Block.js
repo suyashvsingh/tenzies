@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import AppContext from "./context";
 
-function Block({ individualData, toggle }) {
+function Block({ individualData }) {
+  const { toggle } = useContext(AppContext);
+
   return (
     <div
       className={`block ${individualData.on ? `block--green` : ""} `}
