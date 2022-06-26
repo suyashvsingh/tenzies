@@ -1,98 +1,97 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: 'Karla', sans-serif;
-    background-color: #0B2434;
-    color: white;
+  font-family: "Karla", sans-serif;
+  background-color: #0b2434;
+  color: white;
 }
 
 .App {
-    background-color: #F5F5F5;
-    justify-content: center;
-    padding: 3em;
-    margin: 3em;
-    border-radius: 10px;
+  background-color: #f5f5f5;
+  justify-content: center;
+  padding: 3em;
+  margin: 3em;
+  border-radius: 10px;
 }
 
 @media only screen and (max-width: 864px) {
-    .App {
-        margin: 0.5em;
-    }
+  .App {
+    margin: 0.5em;
+  }
 }
 
 .blocks {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-
 @media only screen and (max-width: 864px) {
-    .blocks {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(5em, 1fr));
-        align-items: center;
-        justify-items: center;
-    }
+  .blocks {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(5em, 1fr));
+    align-items: center;
+    justify-items: center;
+  }
 }
 
 .block {
-    font-weight: 700;
-    background: white;
-    color: #2B283A;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 1em;
-    width: 3em;
-    height: 3em;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 0.3em;
-    cursor: pointer;
+  font-weight: 700;
+  background: white;
+  color: #2b283a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1em;
+  width: 3em;
+  height: 3em;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 0.3em;
+  cursor: pointer;
 }
 
 .block--green {
-    background-color: #59E391;
+  background-color: #59e391;
 }
 
 .button-area {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn {
-    background-color: #5035FF;
-    border: 0px;
-    border-radius: 10px;
-    color: white;
-    padding: 1em 2em;
-    font-weight: 700;
-    margin-top: 2em;
-    cursor: pointer;
+  background-color: #5035ff;
+  border: 0px;
+  border-radius: 10px;
+  color: white;
+  padding: 1em 2em;
+  font-weight: 700;
+  margin-top: 2em;
+  cursor: pointer;
 }
 
 .header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 h1 {
-    font-size: 2em;
-    color: #2B283A;
-    margin-bottom: 0.75em;
+  font-size: 2em;
+  color: #2b283a;
+  margin-bottom: 0.75em;
 }
 
 p {
-    color: #4A4E74;
-    margin-bottom: 0.75em;
-    font-size: 1.2em;
-    text-align: justify;
+  color: #4a4e74;
+  margin-bottom: 0.75em;
+  font-size: 1.2em;
+  text-align: justify;
 }
 
 div,
@@ -101,5 +100,5 @@ textarea,
 button,
 select,
 a {
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }

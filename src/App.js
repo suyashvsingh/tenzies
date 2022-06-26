@@ -2,69 +2,78 @@ import { useEffect, useState } from "react";
 import Header from "./components/Header";
 import Blocks from "./components/Blocks";
 import Button from "./components/Button";
-import Confetti from 'react-confetti'
+import Confetti from "react-confetti";
 
 function App() {
-
   let createRandomDice = () => {
-    let data = []
-    for (let i = 0; i < 10; i++) {
-      let number = Math.floor(Math.random() * 6) + 1
-      data.push({ id: i + 1, number: number, on: false })
-    }
-    return data
-  }
+    let data = [
+      { id: 1, number: 1, on: false },
+      { id: 1, number: 1, on: false },
+      { id: 1, number: 1, on: false },
+      { id: 1, number: 1, on: false },
+      { id: 1, number: 1, on: false },
+      { id: 1, number: 1, on: false },
+      { id: 1, number: 1, on: false },
+      { id: 1, number: 1, on: false },
+      { id: 1, number: 1, on: false },
+      { id: 1, number: 1, on: false },
+    ];
+    // for (let i = 0; i < 10; i++) {
+    //   let number = Math.floor(Math.random() * 6) + 1;
+    //   data.push({ id: i + 1, number: number, on: false });
+    // }
+    return data;
+  };
 
-  const [data, setData] = useState([...createRandomDice()])
-  const [over, setOver] = useState(false)
+  const [data, setData] = useState([...createRandomDice()]);
+  const [over, setOver] = useState(false);
 
   useEffect(() => {
     if (!over) {
-      setData([...createRandomDice()])
+      setData([...createRandomDice()]);
     }
-  }, [over])
+  }, [over]);
 
   useEffect(() => {
-    let count = 0, last = 0
+    let count = 0,
+      last = 0;
     data.forEach((box) => {
       if (box.on === true && last === 0) {
-        last = box.number
-        count++
-      }
-      else if (box.on === true && last === box.number) {
+        last = box.number;
+        count++;
+      } else if (box.on === true && last === box.number) {
         count++;
       }
-    })
+    });
     if (count === 10) {
-      setOver(true)
+      setOver(true);
     }
-  }, [data])
+  }, [data]);
 
   function toggle(id) {
-    setData(prevData => {
+    setData((prevData) => {
       let newData = prevData.map((box) => {
         if (box.id === id) {
-          box.on = !box.on
+          box.on = !box.on;
         }
-        return box
-      })
-      return newData
-    })
+        return box;
+      });
+      return newData;
+    });
   }
 
   function onClick() {
     if (!over) {
-      setData(prevData => {
+      setData((prevData) => {
         let newData = prevData.map((box) => {
-          if (!box.on) box.number = Math.floor(Math.random() * 6) + 1
-          return box
-        })
-        return newData
-      })
-    }
-    else {
-      setData(data)
-      setOver(false)
+          if (!box.on) box.number = Math.floor(Math.random() * 6) + 1;
+          return box;
+        });
+        return newData;
+      });
+    } else {
+      setData(data);
+      setOver(false);
     }
   }
 
