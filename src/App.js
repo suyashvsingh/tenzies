@@ -17,10 +17,13 @@ function App() {
 
   const [data, setData] = useState([...createRandomDice()]);
   const [over, setOver] = useState(false);
+  //count
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
     if (!over) {
       setData([...createRandomDice()]);
+      setCount(0);
     }
   }, [over]);
 
@@ -54,6 +57,7 @@ function App() {
 
   function onClick() {
     if (!over) {
+      setCount(count + 1);
       setData((prevData) => {
         let newData = prevData.map((box) => {
           if (!box.on) box.number = Math.floor(Math.random() * 6) + 1;
@@ -68,7 +72,7 @@ function App() {
   }
 
   return (
-    <AppContext.Provider value={{ data, toggle, onClick, over }}>
+    <AppContext.Provider value={{ data, toggle, onClick, over, count }}>
       <div className="App">
         <Header />
         <Blocks />
